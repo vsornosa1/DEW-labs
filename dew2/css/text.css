@@ -1,0 +1,16 @@
+@import url(RobotoCondensed-Bold.ttf);
+@import url(RobotoCondensed-BoldItalic.ttf);
+@import url(RobotoCondensed-Italic.ttf);
+@import url(RobotoCondensed-Light.ttf);
+@import url(RobotoCondensed-LightItalic.ttf);
+@import url(RobotoCondensed-Regular.ttf);
+
+@font-face {
+    font-family: RobotoCondensed-Regular;
+    src: url(RobotoCondensed-Regular.ttf);
+} 
+
+.tipografico {
+    font-family: RobotoCondensed-Regular;
+    font-size: 16px;
+}

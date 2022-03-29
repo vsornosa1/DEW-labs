@@ -1,0 +1,87 @@
+p { 
+    font-family: sans-serif;
+}
+p.nota { 
+    color: white;
+    background: black;
+}
+ul.li { 
+    color: white;
+    background: red;
+    font-family: sans-serif;
+}
+ol.li { 
+    color: white;
+    background: blue; 
+    font-family: Comic, sans-serif;
+}
+dt { 
+    color: white;
+    background: blue; 
+    font-size: 16px;
+}
+td { 
+    color: darkred; 
+    background: white;
+    font-family: helvetica, serif;
+}
+table {
+    align: center;
+}
+body { 
+    background-color:#cfdfef;
+    font-family: serif;
+    color: darkblue;
+    margin-left: 8px;
+}
+
+h3 { 
+    color: darkred;
+    margin-top: 8px;
+    font-size: 24px; 
+    font-weight: bold;
+    font-family: serif;
+    text-shadow: 4px 4px 4px #aaa;
+    font-variant: small-caps;
+    font-family: impact;
+}
+
+h2 { 
+    color: darkgreen; 
+    margin-top: 8px;
+    font-size: 30px; 
+    font-weight: bold;
+    text-shadow: 4px 4px 4px #aaa;
+    font-variant: small-caps;
+    font-family: impact;
+}
+
+h1 { 
+    color: darkblue; 
+    margin-top: 10px;
+    font-size: 36px; 
+    font-weight: bold;
+    font-family: serif;
+    text-shadow: 4px 4px 4px #aaa;
+    font-variant: small-caps;
+    font-family: impact;
+}
+
+I { 
+    font-weight: bold;
+    color: azure;
+}
+
+a:link { 
+    font-size: 18px; 
+    text-decoration: none;
+    color: green;
+    font-weight: bold;
+    font-family: impact, sans-serif;
+}
+a:visited { 
+    font-size: 12px; 
+    text-decoration: none;
+    color: #AAAAAA;
+    font-family: impact, sans-serif;
+}
