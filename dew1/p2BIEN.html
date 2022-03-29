@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://personales.upv.es/rgarcia/dew1/ej1.html -->
+<html lang="es-es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> Práctica 1: HTML </title>
+  </head>
+
+  <body>
+    <h1> Toda página debería tener un título. </h1>
+    <p> Claro que después habrá que poner el texto normal. </p>
+
+    <hr />
+
+    <p class="nota"> Recuerda que siempre puedes ver el código fuente de una página HTML desde el navegador. </p>
+    <p class="nota"> Tampoco deberías olvidar que se pueden guardar las páginas en ficheros, para luego editarlas si es necesario. </p>
+    <p class="nota"> Cuando uses Eclipse, el editor de páginas web te permite simultanear la vista del código fuente con su previsuaización </p>
+    <p class="nota"> Cuando uses un editor de texto llano, te aconsejo que mantengas abiertos tanto el navegador como el editor
+      elegido. De esta manera podrás observar inmediatamente las modificaciones que realices en la página.
+    </p>
+    <p class="nota">
+      Cuidado con los derechos de autor si deseas emplear imágenes de terceros. 
+      En Wikimedia Commons (
+        <a href="http://commons.wikimedia.org/wiki/Portada">
+          <img src="./ej1_files/Commons-logo.svg.png" width="20" alt="logo Commons">
+        </a>
+      ) dispones de un catálogo de imágenes y otros recursos multimedia libres.
+    </p>
+
+    <h2> Los títulos de nivel inferior destacan aspectos relativamente menos importantes. </h2>
+    <h3> Los de nivel 3 destacan todavía menos. </h3>
+    <h4> Y no deberías pasar de los de nivel 4. </h4>
+    <p> Observarás que no destacan demasiado respecto al texto llano. </p>
+
+    <h2> Es bueno practicar con las listas. </h2>
+    <p> La primera será una lista no ordenada para enumerar: </p>
+    <ul>
+      <li> Lo que debería aprender </li>
+      <li> Lo que ya sé hacer </li>
+      <li> Lo que se supone que debería conocer </li>
+    </ul>
+
+    <hr />
+
+    <p> Claro que los elementos que tienen un orden deben ser indicados de forma diferente: </p>
+    <ol>
+      <li> Batir los huevos </li>
+      <li> Añadir el tomate </li>
+      <li> Salpimentar al gusto </li>
+      <li> Freir a fuego fuerte </li>
+      <li> Retirar cuando comience a dorarse </li>
+      <li> Servir a temperatura ambiente </li>
+    </ol>
+
+    <hr />
+
+    <p> Hay otros tipos de lista que son más complicadas, pero su utilidad estriba en:</p>
+    <dl>
+      <dt> Conveniencia </dt>
+        <dd> Puesto que hay momentos en los que nos interesa separar el término a definir de se definición </dd>
+      <dt> Claridad </dt>
+        <dd> Dado que esta separación destaca y separa el término a definir </dd>
+      <dt> Versatilidad </dt>
+        <dd> Podríamos construir un programa que calculase un índice de términos seleccionando los que se han definido </dd>
+    </dl>
+
+    <hr />
+
+    <p> Desde luego que tenemos la posibilidad de elegir los bullets (también
+      denominados viñetas en algunos programas) o el sistema de numeración
+      a aplicar (p.ej. alfabético), pero esas capacidades añadidas
+      son un extra en este momento. Recuerda que se obtienen mediante atributos
+      aplicados a las listas.
+    </p>
+
+    <hr />
+
+    <h2> No sólo de listas vive el hombre ... también se necesita tener tablas </h2>
+    <p> Es difícil encontrar argumentos nuevos para defender la existencia
+      de esta estructura. Un ejemplo sencillo podría ser un calendario
+      de la semana laboral:
+    </p>
+
+    <table style="border:thin solid black;">
+      <tbody>
+        <tr>
+          <td> Lunes </td>
+          <td> Martes </td>
+          <td> Miércoles </td>
+          <td> Jueves </td>
+          <td> Viernes </td>
+        </tr>
+      <tr>
+        <td> 2 </td>
+        <td> 3 </td>
+        <td> 4 </td>
+        <td> 5 </td>
+        <td> 6 </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <p> Pero quizá esto fuera demasiado obvio ..., ¿qué tal una tabla no homogénea sin bordes? </p>
+
+    <hr />
+
+    <h2> Algo de formularios </h2>
+    <p> El primer formulario que vamos a crear sólo nos sirve para comprobar que funciona. 
+      Hay un programita <code> Printenv </code> que nos indicará qué ha recibido el servidor al pulsar el botón de envío.
+    </p>
+
+    <form action="http://memex.dsic.upv.es:8080/dew1/Printenv" method="get">
+      <p>
+        <input type="submit" value="Pulsa aquí, valiente">
+      </p>
+    </form>
+
+    <hr />
+
+    <p> Empezamos a complicar el asunto colocando algunos elementos extra. </p>
+    <p> Todo lo que sigue, hasta el botón <code> Segunda prueba </code>, forma parte del mismo formulario: </p>
+    <form action="http://memex.dsic.upv.es:8080/dew1/Printenv" method="get">
+      <p> Un texto: 
+        <input type="text" name="var1" size="30">
+      </p>
+      <p> Área de texto: 
+        <textarea name="var2" rows="5" cols="25"></textarea>
+      </p>
+      <p> Opciones compatibles (independientes entre sí): <br />
+      <input type="checkbox" name="var3" value="yes">No me pinches, <br />
+      <input type="checkbox" name="var4" value="yes">te lo advierto, <br />
+      <input type="checkbox" name="var5" value="yes">que me enfado <br />
+      <input type="checkbox" name="var6" value="yes">y te reviento. </p>
+      <p> Sólo podrás elegir una de las siguientes opciones (la segunda tiene ya una marca por omisión): <br />
+      <input type="radio" name="var7" value="1">Primera opción. <br />
+      <input type="radio" name="var7" value="2" checked="checked">Segunda opción. <br />
+      <input type="radio" name="var7" value="3">Tercera opción. </p>
+      <p> 
+        <input type="submit" value="Segunda prueba">
+      </p>
+    </form>
+
+    <hr />
+    
+    <p> Comencemos el tercer formulario. Aquí usaremos listas y menúes desplegables </p>
+    <form action="http://memex.dsic.upv.es:8080/dew1/Printenv" method="get">
+      <p> Dime de dónde vienes:
+        <select name="var8">
+          <option value="valcap"> de Valencia capital </option>
+          <option value="valprov"> de la provincia de Valencia </option>
+          <option value="casprov"> de la provincia de Castellón </option>
+          <option value="aliprov"> de la provincia de Alicante </option>
+          <option value="otros"> no, vengo de otro lugar </option>
+        </select>
+      </p>
+      <p> En ocasiones uno puede elegir varios valores si no son incompatibles. 
+        Hace falta pulsar la tecla de mayúsculas junto con el botón del ratón si se desea marcar varias opciones
+      </p>
+      <p> Dime por qué estudias Informática: 
+        <select name="var9" multiple="multiple" size="3">
+          <option value="noestudioinf"> yo no estudio Informática </option>
+          <option value="megusta"> porque me gusta </option>
+          <option value="masoquista"> porque soy masoquista </option>
+          <option value="nosabiaelegir"> porque no sabía qué elegir </option>
+          <option value="millonario"> porque quiero ser millonario </option>
+          <option value="famoso"> porque quiero ser famoso </option>
+          <option value="artista"> mamá, quiero ser artista </option>
+          <option value="sacadme"> ¡sacadme de aquí! </option>
+          <option value="norollos"> no estoy para rollos </option>
+          <option value="noestudio"> ¿estudiar?, ¿qué es eso? </option>
+        </select>
+      </p>
+
+      <p> 
+        <input type="submit" value="Tercer formulario">
+      </p>
+    </form>
+
+    <hr />
+
+    <p> ¡Y esto ha sido todo por hoy! </p>
+
+    <xmp>
+      <!DOCTYPE html>
+        <!-- saved from url=(0046)http://personales.upv.es/rgarcia/dew1/ej1.html -->
+        <html lang="es-es">
+          <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <title> Práctica 1: HTML </title>
+          </head>
+
+          <body>
+            <h1> Toda página debería tener un título. </h1>
+            <p> Claro que después habrá que poner el texto normal. </p>
+
+            <hr />
+
+            <p class="nota"> Recuerda que siempre puedes ver el código fuente de una página HTML desde el navegador. </p>
+            <p class="nota"> Tampoco deberías olvidar que se pueden guardar las páginas en ficheros, para luego editarlas si es necesario. </p>
+            <p class="nota"> Cuando uses Eclipse, el editor de páginas web te permite simultanear la vista del código fuente con su previsuaización </p>
+            <p class="nota"> Cuando uses un editor de texto llano, te aconsejo que mantengas abiertos tanto el navegador como el editor
+              elegido. De esta manera podrás observar inmediatamente las modificaciones que realices en la página.
+            </p>
+            <p class="nota">
+              Cuidado con los derechos de autor si deseas emplear imágenes de terceros. 
+              En Wikimedia Commons (
+                <a href="http://commons.wikimedia.org/wiki/Portada">
+                  <img src="./ej1_files/Commons-logo.svg.png" width="20" alt="logo Commons">
+                </a>
+              ) dispones de un catálogo de imágenes y otros recursos multimedia libres.
+            </p>
+
+            <h2> Los títulos de nivel inferior destacan aspectos relativamente menos importantes. </h2>
+            <h3> Los de nivel 3 destacan todavía menos. </h3>
+            <h4> Y no deberías pasar de los de nivel 4. </h4>
+            <p> Observarás que no destacan demasiado respecto al texto llano. </p>
+
+            <h2> Es bueno practicar con las listas. </h2>
+            <p> La primera será una lista no ordenada para enumerar: </p>
+            <ul>
+              <li> Lo que debería aprender </li>
+              <li> Lo que ya sé hacer </li>
+              <li> Lo que se supone que debería conocer </li>
+            </ul>
+
+            <hr />
+
+            <p> Claro que los elementos que tienen un orden deben ser indicados de forma diferente: </p>
+            <ol>
+              <li> Batir los huevos </li>
+              <li> Añadir el tomate </li>
+              <li> Salpimentar al gusto </li>
+              <li> Freir a fuego fuerte </li>
+              <li> Retirar cuando comience a dorarse </li>
+              <li> Servir a temperatura ambiente </li>
+            </ol>
+
+            <hr />
+
+            <p> Hay otros tipos de lista que son más complicadas, pero su utilidad estriba en:</p>
+            <dl>
+              <dt> Conveniencia </dt>
+                <dd> Puesto que hay momentos en los que nos interesa separar el término a definir de se definición </dd>
+              <dt> Claridad </dt>
+                <dd> Dado que esta separación destaca y separa el término a definir </dd>
+              <dt> Versatilidad </dt>
+                <dd> Podríamos construir un programa que calculase un índice de términos seleccionando los que se han definido </dd>
+            </dl>
+
+            <hr />
+
+            <p> Desde luego que tenemos la posibilidad de elegir los bullets (también
+              denominados viñetas en algunos programas) o el sistema de numeración
+              a aplicar (p.ej. alfabético), pero esas capacidades añadidas
+              son un extra en este momento. Recuerda que se obtienen mediante atributos
+              aplicados a las listas.
+            </p>
+
+            <hr />
+
+            <h2> No sólo de listas vive el hombre ... también se necesita tener tablas </h2>
+            <p> Es difícil encontrar argumentos nuevos para defender la existencia
+              de esta estructura. Un ejemplo sencillo podría ser un calendario
+              de la semana laboral:
+            </p>
+
+            <table style="border:thin solid black;">
+              <tbody>
+                <tr>
+                  <td> Lunes </td>
+                  <td> Martes </td>
+                  <td> Miércoles </td>
+                  <td> Jueves </td>
+                  <td> Viernes </td>
+                </tr>
+              <tr>
+                <td> 2 </td>
+                <td> 3 </td>
+                <td> 4 </td>
+                <td> 5 </td>
+                <td> 6 </td>
+              </tr>
+              </tbody>
+            </table>
+
+            <p> Pero quizá esto fuera demasiado obvio ..., ¿qué tal una tabla no homogénea sin bordes? </p>
+
+            <hr />
+
+            <h2> Algo de formularios </h2>
+            <p> El primer formulario que vamos a crear sólo nos sirve para comprobar que funciona. 
+              Hay un programita <code> Printenv </code> que nos indicará qué ha recibido el servidor al pulsar el botón de envío.
+            </p>
+
+            <form action="http://memex.dsic.upv.es:8080/dew1/Printenv" method="get">
+              <p>
+                <input type="submit" value="Pulsa aquí, valiente">
+              </p>
+            </form>
+
+            <hr />
+
+            <p> Empezamos a complicar el asunto colocando algunos elementos extra. </p>
+            <p> Todo lo que sigue, hasta el botón <code> Segunda prueba </code>, forma parte del mismo formulario: </p>
+            <form action="http://memex.dsic.upv.es:8080/dew1/Printenv" method="get">
+              <p> Un texto: 
+                <input type="text" name="var1" size="30">
+              </p>
+              <p> Área de texto: 
+                <textarea name="var2" rows="5" cols="25"></textarea>
+              </p>
+              <p> Opciones compatibles (independientes entre sí): <br />
+              <input type="checkbox" name="var3" value="yes">No me pinches, <br />
+              <input type="checkbox" name="var4" value="yes">te lo advierto, <br />
+              <input type="checkbox" name="var5" value="yes">que me enfado <br />
+              <input type="checkbox" name="var6" value="yes">y te reviento. </p>
+              <p> Sólo podrás elegir una de las siguientes opciones (la segunda tiene ya una marca por omisión): <br />
+              <input type="radio" name="var7" value="1">Primera opción. <br />
+              <input type="radio" name="var7" value="2" checked="checked">Segunda opción. <br />
+              <input type="radio" name="var7" value="3">Tercera opción. </p>
+              <p> 
+                <input type="submit" value="Segunda prueba">
+              </p>
+            </form>
+
+            <hr />
+            
+            <p> Comencemos el tercer formulario. Aquí usaremos listas y menúes desplegables </p>
+            <form action="http://memex.dsic.upv.es:8080/dew1/Printenv" method="get">
+              <p> Dime de dónde vienes:
+                <select name="var8">
+                  <option value="valcap"> de Valencia capital </option>
+                  <option value="valprov"> de la provincia de Valencia </option>
+                  <option value="casprov"> de la provincia de Castellón </option>
+                  <option value="aliprov"> de la provincia de Alicante </option>
+                  <option value="otros"> no, vengo de otro lugar </option>
+                </select>
+              </p>
+              <p> En ocasiones uno puede elegir varios valores si no son incompatibles. 
+                Hace falta pulsar la tecla de mayúsculas junto con el botón del ratón si se desea marcar varias opciones
+              </p>
+              <p> Dime por qué estudias Informática: 
+                <select name="var9" multiple="multiple" size="3">
+                  <option value="noestudioinf"> yo no estudio Informática </option>
+                  <option value="megusta"> porque me gusta </option>
+                  <option value="masoquista"> porque soy masoquista </option>
+                  <option value="nosabiaelegir"> porque no sabía qué elegir </option>
+                  <option value="millonario"> porque quiero ser millonario </option>
+                  <option value="famoso"> porque quiero ser famoso </option>
+                  <option value="artista"> mamá, quiero ser artista </option>
+                  <option value="sacadme"> ¡sacadme de aquí! </option>
+                  <option value="norollos"> no estoy para rollos </option>
+                  <option value="noestudio"> ¿estudiar?, ¿qué es eso? </option>
+                </select>
+              </p>
+
+              <p> 
+                <input type="submit" value="Tercer formulario">
+              </p>
+            </form>
+
+            <hr />
+
+            <p> ¡Y esto ha sido todo por hoy! </p>
+    </xmp>
+  </body>
+</html>
