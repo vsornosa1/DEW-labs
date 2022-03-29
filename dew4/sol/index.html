@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+	<meta charset="UTF-8" />
+	<title>DEW2021, 31 de marzo. Sornosa Risen, Vicent</title>
+	<link rel="stylesheet" type="text/css" href="./css/estilo.css" /> 
+	<script>
+	function insertDNILetter(){
+		var dni = document.getElementById("dni");
+		var ultNum = parseInt(dni.innerText.charAt(dni.innerText.length - 1))
+		switch(ultNum) {
+			case 0: 
+				document.getElementById("ultNumDNI").src = "./imgs/0.png"; 
+				break;
+			case 1: 
+				document.getElementById("ultNumDNI").src = "./imgs/1.png"; 
+				break;
+			case 2: 
+				document.getElementById("ultNumDNI").src = "./imgs/2.png"; 
+				break;
+			case 3: 
+				document.getElementById("ultNumDNI").src = "./imgs/3.png"; 
+				break;
+			case 4: 
+				document.getElementById("ultNumDNI").src = "./imgs/4.png"; 
+				break;
+			case 5: 
+				document.getElementById("ultNumDNI").src = "./imgs/5.png"; 
+				break;
+			case 6: 
+				document.getElementById("ultNumDNI").src = "./imgs/6.png"; 
+				break;
+			case 7: 
+				document.getElementById("ultNumDNI").src = "./imgs/7.png"; 
+				break;
+			case 8: 
+				document.getElementById("ultNumDNI").src = "./imgs/8.png"; 
+				break;
+			case 9: 
+				document.getElementById("ultNumDNI").src = "./imgs/9.png"; 
+				break;
+			default: 
+				document.getElementById("ultNumDNI").src = "./imgs/error.png"; 
+				break;
+		}
+	}
+	function yo(f) {
+		f.doc.value = this.window.location;
+		return true;
+	}
+	</script>
+</head>
+<body onload="insertDNILetter()">
+	<h1>DEW2021, 31 de marzo. Sornosa Risen, Vicent</h1>
+	<h2>Instrucciones</h2>
+	<p>Debes modificar esta p&aacute;gina para incluir...</p>
+	<table>
+		<tr>
+		  <td>
+		    <ul class="destacar">
+		  	  <li class="letra">Tus apellidos y nombre tanto en el t&iacute;tulo como en el <code>&lt;h1&gt;</code> anterior</li>
+		      <li id="dni" class="letra">Tu DNI sin letra (&oacute; NIE): 21009970</li>
+		      <li class="letra">A la derecha pondr&aacute;s, con JavaScript, la &uacute;ltima cifra</li>
+		    </ul>
+		  </td>
+		  <td>
+		    <img id="ultNumDNI" src="./imgs/error.png" alt="ultima" style="height:50px;" />
+		  </td>
+		</tr>
+	</table>
+	<p>Aqu&iacute; debes a&ntilde;adir un formulario con los siguientes detalles:</p>
+	<ul><li>Invoca por GET a <code>http://servidor.dsic.cloud:8080/vnu/</code></li>
+	    <li>Para el evento <code>submit</code> ejecuta una funci&oacute;n <code>yo()</code> que coloca el valor de <code>window.location</code> en la variable de formulario <code>doc</code></li>
+	    <li>En el resto del formulario aparece lo siguiente...<pre>
+  &lt;input type="hidden" name="useragent" value="Validator.nu" /&gt;
+  &lt;input type="hidden" name="acceptlanguage" value="" /&gt;
+  &lt;input type="hidden" name="showsource" value="yes" /&gt;
+  &lt;input type="hidden" name="doc" /&gt;
+  &lt;input type="submit" value="Validar" /&gt;
+	    </pre></li>
+	    <li>Al pulsar en el bot&oacute;n <code>Validar</code> debe invocarse el CGI de <code>action</code> devolviendo el diagn&oacute;stico correspondiente a esta p&aacute;gina que est&aacute;s construyendo.</li>
+	</ul>
+	
+	<form action="http://memex.dsic.upv.es:8080/vnu/" method="get" onsubmit="return yo(this)">
+		<input type="hidden" name="useragent" value="Validator.nu" />
+		<input type="hidden" name="acceptlanguage" value="" />
+		<input type="hidden" name="showsource" value="yes" />
+		<input type="hidden" name="doc" />
+		<input type="submit" value="Validar" />
+    </form>
+    
+    <h2>Sobre el c&oacute;digo JavaScript</h2>
+    <p>Una funci&oacute;n <code>yo()</code>, que se ha descrito antes, y la inserci&oacute;n del d&iacute;gito. No es demasiado complicado.</p>
+    <h2>Sobre el estilo</h2>
+    <p>Coloca en una hoja de estilo (<code>estilo.css</code>) externa todas las modificaciones referentes a los elementos de la clase <code>destacar</code> y el borde de la imagen.</p>
+    <h2>Haz una captura e ins&eacute;rtala (con ancho 500)</h2>
+    <p>El formulario env&iacute;a la <em>direcci&oacute;n</em> de la p&aacute;gina al validador. Haz una captura e inserta la imagen en la propia p&aacute;gina.<br />Tendr&aacute;s que ...</p>
+    <ul><li>...publicarla sin imagen, </li><li>...validarla, </li><li>...capturar el diagn&oacute;stico, </li><li>...insertar la captura</li><li>...y volver a publicarla.</li></ul>
+	<p>Debes hacer la captura en el propio navegador (mira en la carpeta <code>Descargas</code>), y referenciar el archivo con una orden <code>img</code>. &iexcl;No olvides incluirlo!</p>
+	<p><img src="./imgs/captura_vnu.png" alt="captura" width="500"/></p>
+</body>
+</html>

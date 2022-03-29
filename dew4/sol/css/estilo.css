@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.destacar {
+	background-color: gray;
+}
+
+.letra {
+    font-weight: bold;
+    color: white;
+}

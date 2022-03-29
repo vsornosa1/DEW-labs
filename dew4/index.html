@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="Laboratorio 1 de DEW, ETSINF, curso 2021/22" />
+<meta name="author" content="Ramon Garcia" />
+<title>Cuarta sesi&oacute;n</title>
+<style>
+  .c {border-style: dotted;}
+</style>
+</head>
+<body>
+
+<h1>Laboratorio 1 de DEW, sesi&oacute;n 4: Preparaci&oacute;n para la prueba individual</h1>
+<h2>Atenci&oacute;n: esta sesi&oacute;n se imparte antes de la tercera</h2>
+
+<p class="c">Se estima que el tiempo necesario para realizar esta sesi&oacute;n con &eacute;xito <strong>supera las 4 horas</strong>. Esto se debe a la uni&oacute;n de muchas novedades que se suman a la propia actividad:</p>
+<ul>
+  <li>Uso de virtuales de portal</li>
+  <li>Uso del entorno de desarrollo integrado Eclipse</li>
+  <li>Uso del contenedor de servlets Tomcat</li>
+</ul>
+
+<p>La prueba individual de laboratorio consiste en la realizaci&oacute;n de unas actividades relacionadas con la producci&oacute;n, modificaci&oacute;n y publicaci&oacute;n de materiales para la web, en un proceso que incluye adem&aacute;s la validaci&oacute;n y captura de instant&aacute;neas.</p>
+<ul><li>Tipos de materiales: <em>scripts</em>, hipertexto, hojas de estilo.</li>
+<li>Condiciones de realizaci&oacute;n: una hora, equipos LINUX (<code>desarrollo</code> y <code>servidor</code>) de las virtuales de portal del DSIC, sin documentaci&oacute;n ni acceso por red, con herramientas que incluyen:
+<ul><li>Un entorno de desarrollo Eclipse para JEE</li>
+<li>Bibliotecas Tomcat, ya configuradas en Eclipse</li>
+<li>Navegador web Firefox</li>
+<li>Servidor Tomcat</li>
+<li>Acceso a un validador y a un servidor de entrega, ambos en el portal</li>
+</ul>
+<li>Objetivo final: construir y entregar por web los archivos con las caracter&iacute;sticas indicadas, habiendo demostrado su correcto funcionamiento
+mediante un despliegue en un servidor Tomcat</li>
+</ul>
+
+<h2>Modificaciones sobre este enunciado</h2>
+<p class="c">Como las condiciones para la realizaci&oacute;n de la pr&aacute;ctica y las del examen no son id&eacute;nticas, y con el prop&oacute;sito de <em>mantener el enunciado original sin cambios</em>, deberemos adaptarnos mediante las siguientes modificaciones sobre la pr&aacute;ctica:</p>
+<ul>
+  <li><strong>No</strong> disponemos de dos equipos llamados <code>desarrollo</code> y <code>servidor</code>. El servidor ser&aacute; nuestra virtual de portal.</li>
+  <li>La URL para el validador <em>temporal</em> (para esta sesi&oacute;n) ser&aacute; <code>http://dew-rgarcia-2122.dsicv.upv.es:8080/vnu/</code></li>
+  <li>Para el examen se proporciona el directorio de Tomcat con sus bibliotecas para Eclipse, y unas ilustraciones con los d&iacute;gitos del <code>0</code> al <code>9</code> (comprimido <a href="digitos.tar.gz">aqu&iacute;</a>)</li>
+  <li>No se realiza la entrega final del material.</li>
+</ul>
+
+<h2>Material inicial y aspecto final</h2>
+<p>Adem&aacute;s del archivo con las ilustraciones dispones de estos tres items:</p>
+<ul>
+  <li>La p&aacute;gina de hipertexto (update: completada) (<a href="./sol/index.html"><code>ejercicio.html</code></a>).<span class="c">No la descargues como "P&aacute;gina web, <strong>completa</strong>" porque el navegador alterar&aacute; su contenido.</span></li>
+  <li><a href="capturaCompleta.png">&Eacute;ste</a> es su aspecto (como imagen): Terminada</li>
+  <li>La &uacute;nica documentaci&oacute;n que puedes consultar es el PDF sobre <a href="creacion_y_publicacion_basicas.pdf">Creaci&oacute;n y Publicaci&oacute;n B&aacute;sicas</a> (no pierdas mucho tiempo con &eacute;l)</li>
+</ul>
+<h2>Procedimiento paso a paso</h2>
+<p>La mayor&iacute;a de las acciones se realizan en el equipo <code>desarrollo</code>, aunque puedan aparecer detalles espec&iacute;ficos.</p>
+<ol>
+  <li>Crear en Eclipse un proyecto web din&aacute;mico llamado <code>sol</code></li>
+  <li>Modificar el documento base seg&uacute;n indicaciones</li>
+  <li>Cambios en otros recursos (CSS, im&aacute;genes, ...)</li>
+  <li>Exportar todo lo necesario como archivo <code>WAR</code> y publicar en el directorio apropiado del servidor (<code>servidor</code>)</li>
+  <li>Acceder por HTTP desde el navegador Firefox (en el equipo <code>desarrollo</code>)</li>
+  <li>Validar documento (seguir instrucciones)<br /><em>En caso correcto</em>, hacer una captura de <em>p&aacute;gina visible</em> desde Firefox, con algo de complicaci&oacute;n:
+  <ul><li>Como la operaci&oacute;n <code>Captura de pantalla</code> no aparece en el men&uacute;, el primer paso es a&ntilde;adirla:<br />
+  <img src="recorte_personalizar_barra_herramientas.png" width="200" alt="recorte personalizar barra de herramientas" />&nbsp;<img src="recorte_personalizar_menu_desborde.png" width="600" alt="recorte personalizar menu de desborde" />&nbsp;<img src="recorte_captura_en_menu_desborde.png" width="300" alt="recorte captura de pantalla desde el menu de desborde" />
+
+  <ol>
+  <li>Pulsando el botón derecho sobre la barra de herramientas, elegimos la operación de <code>Personalizar...</code> (primera ilustración)</li>
+  <li>Arrastramos el icono que representa la operación de <code>Captura de pantalla</code> al &aacute;rea derecha, que permitir&aacute; el acceso a trav&eacute;s del bot&oacute;n <code>&gt;&gt;</code> (men&uacute; de desborde) (segunda ilustraci&oacute;n)</li>
+  <li>Ahora ya lo podemos seleccionar (tercera ilustraci&oacute;n) en la lista <code>&gt;&gt;</code> (a la derecha de la vi&ntilde;eta de URL del navegador).</li>
+  </ol>
+  <li>La operaci&oacute;n permite capturar una p&aacute;gina completa (lo usaremos al final) o solo la parte visible en la ventana actual del navegador (lo usamos a continuaci&oacute;n).<br />
+  <img src="captura_ff2_visible-completa.png"  height="80" alt="tipos de captura de pantalla" />
+  </li>
+  </ul></li>
+  <li>Incorporar la captura de la <em>p&aacute;gina visible</em> en la p&aacute;gina y <strong>volver a publicar</strong><br />Realizar ahora una captura de <em>p&aacute;gina completa</em> desde Firefox</li>
+  <li>Conectar con <code>entrega</code> y subir el archivo <code>WAR</code> publicado y la captura de la p&aacute;gina completa</li>
+</ol>
+
+<h2>Otras sesiones...</h2>
+<p>Puede que no est&eacute;n todas disponibles</p>
+<ol>
+  <li><a href="http://personales.alumno.upv.es/vsorris/dew1">Sesi&oacute;n 1</a></li>
+    <li><a href="http://personales.alumno.upv.es/vsorris/dew2">Sesi&oacute;n 2</a></li>
+    <li><a href="http://personales.alumno.upv.es/vsorris/dew3">Sesi&oacute;n 3</a></li>
+    <li><a href="http://personales.alumno.upv.es/vsorris/dew4">Sesi&oacute;n 4</a></li>
+</ol>
+
+</body>
+</html>
