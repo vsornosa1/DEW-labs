@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="description" content="Laboratorio 1 de DEW, ETSINF, curso 2021/22">
+  <meta name="author" content="Ramon Garcia">
+  <title>Tercera sesión</title>
+</head>
+<body>
+  <h1>Laboratorio 1 de DEW, sesión 3: JavaScript y el DOM</h1>
+  <h2>Atención: esta sesión se imparte después de la cuarta</h2>
+  <h2>1º Uso en formularios</h2>
+  <p>La idea es colocar una función que pueda comprobar los datos introducidos en un formulario
+  antes de enviarlos al CGI que deberá procesarlos.</p>
+  <h3>Las bases: activación y acceso a variables</h3>
+  <p>Dada una función <code>f()</code>, la vinculamos al envío del formulario en el inicio
+  del mismo: <code>&lt;form action="..." onsubmit="return f(this);"&gt;</code><br>
+  Si la función devuelve un valor <code>true</code> entonces se invocará el CGI especificado por <code>action</code></p>
+  <p>Modifica este <a href="miniFormulario.html">miniformulario</a> para incluir una variable <code>dato</code> que reciba un valor del usuario, y que sea mostrado mediante un <code>alert</code> en la función</p>
+  <h3>Uso: comprobación del NIF</h3>
+  <p>En este apartado debe crearse un par <a href="dniDiagnostico.html">formulario/script</a> de manera que el primero permita la introducción de un valor (<code>x</code>)
+  que el segundo debe comprobar y diagnosticar. El único caso <em>positivo</em> se produce cuando <code>x</code> es un NIF válido. Para ello:</p>
+  <ol>
+    <li><code>x</code> debe tener 9 símbolos</li>
+    <li>Los primeros 8 deben ser dígitos</li>
+    <li>Si llamamos <code>y</code> a esos 8 dígitos, y <code>z</code> al noveno símbolo, entonces la comprobación
+    puede ser la siguiente:<br>
+  <pre>&lt;script&gt;
+    function validar(y, z)
+    {
+        letras = "TRWAGMYFPDXBNJZSQVHLCKET"
+        return (z == letras[y % 23])
+    }
+  &lt;/script&gt;
+  </pre></li></ol>
+  <p>Construye la página completa, incluyendo formulario y script, de 
+  forma que se notifique si el valor introducido es un NIF válido o no</p>
+
+  <h2>2º Alterando la estructura del documento</h2>
+  <p>Hay una gran diferencia entre modificar contenidos en una página y 
+  alterar la estructura. Cuando el navegador procesa el documento, crea 
+  una estructura interna que lo representa.
+  No es especialmente complicado desde ese momento modificar el contenido 
+  de un párrafo o una propiedad existente porque ninguna de estas 
+  operaciones altera la estructura.
+  Sin embargo, añadir un elemento entre otros dos sí que es más complejo, y le dedicamos una atención especial en este ejercicio.</p>
+  <h3>Funciones para modificar un documento HTML</h3>
+  <p>Imaginemos que deseamos incluir un párrafo con un enlace dentro de un <code>&lt;div&gt;</code> etiquetado con <code>id="aqui"</code></p>
+  <pre>var destino = document.getElementById('aqui')
+  var p = document.createElement('p')
+  // Comenzamos a colocar contenido en p (...falta)
+  var a = document.createElement('a')
+  // Damos valores a las propiedades necesarias de a (...falta)
+  // Agregar el enlace al parrafo
+  p.appendChild(a)
+  // Terminamos de colocar contenido en p (...falta)
+  // Agregar el parrafo al div
+  destino.appendChild(p);
+  </pre>
+  <p><a href="insertarEnDiv.html">Aquí</a> tienes un pequeño ejemplo.</p>
+  <h3>El documento de partida</h3>
+  <p>Típicamente se colocan estructuras de organización y navegación en 
+  documentos de cierto tamaño. Con esta excusa, procedente de Wikisource,
+  he seleccionado el inicio del <a href="https://es.wikisource.org/wiki/El_ingenioso_hidalgo_Don_Quijote_de_la_Mancha">primer capítulo de la primera parte de
+  <cite>El ingenioso Hidalgo Don Quijote de la Mancha</cite></a>, de <cite>Miguel de Cervantes Saavedra</cite>.</p>
+  <p>El <a href="quijote.html">documento de partida</a> es una versión modificada de los primeros párrafos, cada uno precedido por un <code>&lt;h3&gt;</code> para simular
+  un título que hemos de indexar en la tabla de contenidos.</p>
+  <h3>Una solución paso a paso</h3>
+  <ol>
+    <li>¿Dónde colocar la TdC (Tabla de Contenidos)?
+    <p>Colocamos la Tabla de Contenidos en un <code>&lt;div&gt;</code> con <code>id="tdc-aqui"</code> justo antes del primer elemento <code>&lt;h3&gt;</code> a indexar.
+    El código interesante será</p>
+    <pre>    &lt;div id="tdc-aqui"&gt;&lt;/div&gt;&lt;!-- Ubicación de la Tabla de Contenidos --&gt;
+    </pre></li>
+    <li>Recorrer los <code>&lt;h3&gt;</code> e incorporarlos a la TdC (Tabla de Contenidos)<br>
+    Obtenemos la lista con una instrucción <code>var h3 = document.getElementsByTagName('h3')</code>, y luego hemos de recorrer el vector para extraer la información.</li>
+    <li>Añadir enlaces y numeración<br>
+    Se necesita colocar un <code>id</code> en el destino para que pueda 
+  ser referenciado desde el enlace de la TdC. Dado que recorremos cada 
+  uno, podemos utilizar el contador para numerar.</li>
+    <li>Un pequeño guiño en el destino del enlace <strong>[<a href="quijoteMejorado.html">SOLUCIÓN</a>]</strong><br>
+    Como puede haber múltiples destinos en la misma página, podemos colocar un efecto que destaque el <code>&lt;h3&gt;</code> concreto</li>
+  </ol>
+  <h2>Ejercicio de examen (lotería primitiva)</h2>
+  <p>Se trata de un ejercicio compuesto por una página HTML con 
+  formulario, código JavaScript de ejecución secuencial, y una función 
+  JavaScript
+  para comprobar <a href="loteriaPrimitiva.html">valores</a>  del formulario. El <a href="http://personales.upv.es/rgarcia/dew3/primitiva.pdf">enunciado</a> es un archivo PDF.</p>
+
+  <h2>Otras sesiones...</h2>
+  <p>Puede que no estén todas disponibles</p>
+  <ol>
+    <li><a href="http://personales.alumno.upv.es/vsorris/dew1">Sesión 1</a></li>
+    <li><a href="http://personales.alumno.upv.es/vsorris/dew2">Sesión 2</a></li>
+    <li><a href="http://personales.alumno.upv.es/vsorris/dew3">Sesión 3</a></li>
+    <li><a href="http://personales.alumno.upv.es/vsorris/dew4">Sesión 4</a></li>
+  </ol>
+
+  <xmp>
+    <!DOCTYPE html>
+    <html lang="es-es">
+    <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <meta charset="utf-8">
+      <meta name="description" content="Laboratorio 1 de DEW, ETSINF, curso 2021/22">
+      <meta name="author" content="Ramon Garcia">
+      <title>Tercera sesión</title>
+    </head>
+    <body>
+      <h1>Laboratorio 1 de DEW, sesión 3: JavaScript y el DOM</h1>
+      <h2>Atención: esta sesión se imparte después de la cuarta</h2>
+      <h2>1º Uso en formularios</h2>
+      <p>La idea es colocar una función que pueda comprobar los datos introducidos en un formulario
+      antes de enviarlos al CGI que deberá procesarlos.</p>
+      <h3>Las bases: activación y acceso a variables</h3>
+      <p>Dada una función <code>f()</code>, la vinculamos al envío del formulario en el inicio
+      del mismo: <code>&lt;form action="..." onsubmit="return f(this);"&gt;</code><br>
+      Si la función devuelve un valor <code>true</code> entonces se invocará el CGI especificado por <code>action</code></p>
+      <p>Modifica este <a href="miniFormulario.html">miniformulario</a> para incluir una variable <code>dato</code> que reciba un valor del usuario, y que sea mostrado mediante un <code>alert</code> en la función</p>
+      <h3>Uso: comprobación del NIF</h3>
+      <p>En este apartado debe crearse un par <a href="dniDiagnostico.html">formulario/script</a> de manera que el primero permita la introducción de un valor (<code>x</code>)
+      que el segundo debe comprobar y diagnosticar. El único caso <em>positivo</em> se produce cuando <code>x</code> es un NIF válido. Para ello:</p>
+      <ol>
+        <li><code>x</code> debe tener 9 símbolos</li>
+        <li>Los primeros 8 deben ser dígitos</li>
+        <li>Si llamamos <code>y</code> a esos 8 dígitos, y <code>z</code> al noveno símbolo, entonces la comprobación
+        puede ser la siguiente:<br>
+      <pre>&lt;script&gt;
+        function validar(y, z)
+        {
+            letras = "TRWAGMYFPDXBNJZSQVHLCKET"
+            return (z == letras[y % 23])
+        }
+      &lt;/script&gt;
+      </pre></li></ol>
+      <p>Construye la página completa, incluyendo formulario y script, de 
+      forma que se notifique si el valor introducido es un NIF válido o no</p>
+
+      <h2>2º Alterando la estructura del documento</h2>
+      <p>Hay una gran diferencia entre modificar contenidos en una página y 
+      alterar la estructura. Cuando el navegador procesa el documento, crea 
+      una estructura interna que lo representa.
+      No es especialmente complicado desde ese momento modificar el contenido 
+      de un párrafo o una propiedad existente porque ninguna de estas 
+      operaciones altera la estructura.
+      Sin embargo, añadir un elemento entre otros dos sí que es más complejo, y le dedicamos una atención especial en este ejercicio.</p>
+      <h3>Funciones para modificar un documento HTML</h3>
+      <p>Imaginemos que deseamos incluir un párrafo con un enlace dentro de un <code>&lt;div&gt;</code> etiquetado con <code>id="aqui"</code></p>
+      <pre>var destino = document.getElementById('aqui')
+      var p = document.createElement('p')
+      // Comenzamos a colocar contenido en p (...falta)
+      var a = document.createElement('a')
+      // Damos valores a las propiedades necesarias de a (...falta)
+      // Agregar el enlace al parrafo
+      p.appendChild(a)
+      // Terminamos de colocar contenido en p (...falta)
+      // Agregar el parrafo al div
+      destino.appendChild(p);
+      </pre>
+      <p><a href="insertarEnDiv.html">Aquí</a> tienes un pequeño ejemplo.</p>
+      <h3>El documento de partida</h3>
+      <p>Típicamente se colocan estructuras de organización y navegación en 
+      documentos de cierto tamaño. Con esta excusa, procedente de Wikisource,
+      he seleccionado el inicio del <a href="https://es.wikisource.org/wiki/El_ingenioso_hidalgo_Don_Quijote_de_la_Mancha">primer capítulo de la primera parte de
+      <cite>El ingenioso Hidalgo Don Quijote de la Mancha</cite></a>, de <cite>Miguel de Cervantes Saavedra</cite>.</p>
+      <p>El <a href="quijote.html">documento de partida</a> es una versión modificada de los primeros párrafos, cada uno precedido por un <code>&lt;h3&gt;</code> para simular
+      un título que hemos de indexar en la tabla de contenidos.</p>
+      <h3>Una solución paso a paso</h3>
+      <ol>
+        <li>¿Dónde colocar la TdC (Tabla de Contenidos)?
+        <p>Colocamos la Tabla de Contenidos en un <code>&lt;div&gt;</code> con <code>id="tdc-aqui"</code> justo antes del primer elemento <code>&lt;h3&gt;</code> a indexar.
+        El código interesante será</p>
+        <pre>    &lt;div id="tdc-aqui"&gt;&lt;/div&gt;&lt;!-- Ubicación de la Tabla de Contenidos --&gt;
+        </pre></li>
+        <li>Recorrer los <code>&lt;h3&gt;</code> e incorporarlos a la TdC (Tabla de Contenidos)<br>
+        Obtenemos la lista con una instrucción <code>var h3 = document.getElementsByTagName('h3')</code>, y luego hemos de recorrer el vector para extraer la información.</li>
+        <li>Añadir enlaces y numeración<br>
+        Se necesita colocar un <code>id</code> en el destino para que pueda 
+      ser referenciado desde el enlace de la TdC. Dado que recorremos cada 
+      uno, podemos utilizar el contador para numerar.</li>
+        <li>Un pequeño guiño en el destino del enlace <strong>[<a href="quijoteMejorado.html">SOLUCIÓN</a>]</strong><br>
+        Como puede haber múltiples destinos en la misma página, podemos colocar un efecto que destaque el <code>&lt;h3&gt;</code> concreto</li>
+      </ol>
+      <h2>Ejercicio de examen (lotería primitiva)</h2>
+      <p>Se trata de un ejercicio compuesto por una página HTML con 
+      formulario, código JavaScript de ejecución secuencial, y una función 
+      JavaScript
+      para comprobar <a href="loteriaPrimitiva.html">valores</a>  del formulario. El <a href="http://personales.upv.es/rgarcia/dew3/primitiva.pdf">enunciado</a> es un archivo PDF.</p>
+
+      <h2>Otras sesiones...</h2>
+      <p>Puede que no estén todas disponibles</p>
+      <ol>
+        <li><a href="http://personales.alumno.upv.es/vsorris/dew1">Sesión 1</a></li>
+        <li><a href="http://personales.alumno.upv.es/vsorris/dew2">Sesión 2</a></li>
+        <li><a href="http://personales.alumno.upv.es/vsorris/dew3">Sesión 3</a></li>
+        <li><a href="http://personales.alumno.upv.es/vsorris/dew4">Sesión 4</a></li>
+      </ol>
+
+
+    </body>
+    </html>
+  </xmp>
+</body>
+</html>

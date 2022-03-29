@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es-es"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Don Quijote de la Mancha</title>
+<script>
+  function pongocosas(){
+    var destino = document.getElementById('tdc-aqui')
+    var nav = document.createElement('nav')
+    var h2 = document.createElement('h2')
+    h2.innerHTML = "Aqui tenemos ";
+    var ol = document.createElement('ol') 
+    var h3 = document.getElementsByTagName('h3')
+    var titulo, link, suma;
+    for(var j = 0; j < h3.length; j++){
+        suma = j + 1;
+        titulo = h3[j].innerText
+        h3[j].id = suma
+        h3[j].innerText = suma + ". " + titulo;
+        link = "#"+ h3[j].id
+        var li = document.createElement('li')       
+        var a =  document.createElement ('a')
+        a.href = link; a.text = titulo;
+        li.appendChild(a)
+        ol.appendChild(li)
+    } 
+    nav.appendChild(h2); nav.appendChild(ol); destino.appendChild(nav);
+    
+
+  } 
+
+</script>
+</head>
+<body onload="pongocosas()">
+
+  <h1>Don Quijote con Tabla de Contenidos (todav�a no)</h1>
+  <p>Procedente de Wikisource, este texto es el inicio del <a href="https://es.wikisource.org/wiki/El_ingenioso_hidalgo_Don_Quijote_de_la_Mancha">primer cap�tulo de la primera parte de <cite>El ingenioso Hidalgo Don Quijote de la Mancha</cite></a>, de <cite>Miguel de Cervantes Saavedra</cite></p>  
+    
+  <div id="tdc-aqui"></div><!-- Ubicación de la Tabla de Contenidos -->
+  
+  <h3>En un lugar de la Mancha</h3>
+  <p>En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha
+ mucho tiempo que viv�a un hidalgo de los de lanza en astillero, adarga 
+antigua, roc�n flaco y galgo corredor.</p>  
+  
+  <h3>Es, pues, de saber que este sobredicho hidalgo</h3>
+  <p>Es, pues, de saber que este sobredicho hidalgo, los ratos que 
+estaba ocioso, que eran los m�s del a�o, se daba a leer libros de 
+caballer�as, con tanta afici�n y gusto, que olvid� casi de todo punto el
+ ejercicio de la caza, y aun la administraci�n de su hacienda. Y lleg� a
+ tanto su curiosidad y desatino en esto, que vendi� muchas hanegas de 
+tierra de sembradura para comprar libros de caballer�as en que leer, y 
+as�, llev� a su casa todos cuantos pudo haber dellos; y de todos, 
+ningunos le parec�an tan bien como los que compuso el famoso Feliciano 
+de Silva, porque la claridad de su prosa y aquellas entricadas razones 
+suyas le parec�an de perlas, y m�s cuando llegaba a leer aquellos 
+requiebros y cartas de desaf�os, donde en muchas partes hallaba escrito:
+ La raz�n de la sinraz�n que a mi raz�n se hace, de tal manera mi raz�n 
+enflaquece, que con raz�n me quejo de la vuestra fermosura. Y tambi�n 
+cuando le�a: ...los altos cielos que de vuestra divinidad divinamente 
+con las estrellas os fortifican, y os hacen merecedora del merecimiento 
+que merece la vuestra grandeza.</p>  
+  
+  <h3>Con estas razones perd�a el pobre caballero el juicio</h3>
+  <p>Con estas razones perd�a el pobre caballero el juicio, y 
+desvel�base por entenderlas y desentra�arles el sentido, que no se lo 
+sacara ni las entendiera el mesmo Arist�teles, si resucitara para s�lo 
+ello. No estaba muy bien con las heridas que don Belian�s daba y 
+receb�a, porque se imaginaba que, por grandes maestros que le hubiesen 
+curado, no dejar�a de tener el rostro y todo el cuerpo lleno de 
+cicatrices y se�ales. Pero, con todo, alababa en su autor aquel acabar 
+su libro con la promesa de aquella inacabable aventura, y muchas veces 
+le vino deseo de tomar la pluma y dalle fin al pie de la letra, como 
+all� se promete; y sin duda alguna lo hiciera, y aun saliera con ello, 
+si otros mayores y continuos pensamientos no se lo estorbaran. Tuvo 
+muchas veces competencia con el cura de su lugar -que era hombre docto, 
+graduado en Sigüenza-, sobre cu�l hab�a sido mejor caballero: Palmer�n 
+de Ingalaterra o Amad�s de Gaula; mas maese Nicol�s, barbero del mesmo 
+pueblo, dec�a que ninguno llegaba al Caballero del Febo, y que si alguno
+ se le pod�a comparar, era don Galaor, hermano de Amad�s de Gaula, 
+porque ten�a muy acomodada condici�n para todo; que no era caballero 
+melindroso, ni tan llor�n como su hermano, y que en lo de la valent�a no
+ le iba en zaga</p>  
+  
+  <h3>En resoluci�n, �l se enfrasc� tanto en su lectura</h3>
+  <p>En resoluci�n, �l se enfrasc� tanto en su lectura, que se le 
+pasaban las noches leyendo de claro en claro, y los d�as de turbio en 
+turbio; y as�, del poco dormir y del mucho leer, se le sec� el celebro, 
+de manera que vino a perder el juicio. Llen�sele la fantas�a de todo 
+aquello que le�a en los libros, as� de encantamentos como de pendencias,
+ batallas, desaf�os, heridas, requiebros, amores, tormentas y disparates
+ imposibles; y asent�sele de tal modo en la imaginaci�n que era verdad 
+toda aquella m�quina de aquellas sonadas so�adas invenciones que le�a, 
+que para �l no hab�a otra historia m�s cierta en el mundo. Dec�a �l que 
+el Cid Ruy D�az hab�a sido muy buen caballero, pero que no ten�a que ver
+ con el Caballero de la Ardiente Espada, que de s�lo un rev�s hab�a 
+partido por medio dos fieros y descomunales gigantes. Mejor estaba con 
+Bernardo del Carpio, porque en Roncesvalles hab�a muerto a Rold�n el 
+encantado, vali�ndose de la industria de H�rcules, cuando ahog� a Anteo,
+ el hijo de la Tierra, entre los brazos. Dec�a mucho bien del gigante 
+Morgante, porque, con ser de aquella generaci�n gigantea, que todos son 
+soberbios y descomedidos, �l solo era afable y bien criado. Pero, sobre 
+todos, estaba bien con Reinaldos de Montalb�n, y m�s cuando le ve�a 
+salir de su castillo y robar cuantos topaba, y cuando en allende rob� 
+aquel �dolo de Mahoma que era todo de oro, seg�n dice su historia. Diera
+ �l, por dar una mano de coces al traidor de Galal�n, al ama que ten�a, y
+ aun a su sobrina de a�adidura. </p>  
+  
+  <h3>En efeto, rematado ya su juicio</h3>
+  <p>En efeto, rematado ya su juicio, vino a dar en el m�s estra�o 
+pensamiento que jam�s dio loco en el mundo; y fue que le pareci� 
+convenible y necesario, as� para el aumento de su honra como para el 
+servicio de su rep�blica, hacerse caballero andante, y irse por todo el 
+mundo con sus armas y caballo a buscar las aventuras y a ejercitarse en 
+todo aquello que �l hab�a le�do que los caballeros andantes se 
+ejercitaban, deshaciendo todo g�nero de agravio, y poni�ndose en 
+ocasiones y peligros donde, acab�ndolos, cobrase eterno nombre y fama. 
+Imagin�base el pobre ya coronado por el valor de su brazo, por lo menos,
+ del imperio de Trapisonda; y as�, con estos tan agradables 
+pensamientos, llevado del estra�o gusto que en ellos sent�a, se dio 
+priesa a poner en efeto lo que deseaba.</p>  
+  
+  <h3>Y lo primero que hizo fue limpiar unas armas</h3>
+  <p>Y lo primero que hizo fue limpiar unas armas que hab�an sido de sus
+ bisabuelos, que, tomadas de or�n y llenas de moho, luengos siglos hab�a
+ que estaban puestas y olvidadas en un rinc�n. Limpi�las y aderez�las lo
+ mejor que pudo, pero vio que ten�an una gran falta, y era que no ten�an
+ celada de encaje, sino morri�n simple; mas a esto supli� su industria, 
+porque de cartones hizo un modo de media celada, que, encajada con el 
+morri�n, hac�an una apariencia de celada entera. Es verdad que para 
+probar si era fuerte y pod�a estar al riesgo de una cuchillada, sac� su 
+espada y le dio dos golpes, y con el primero y en un punto deshizo lo 
+que hab�a hecho en una semana; y no dej� de parecerle mal la facilidad 
+con que la hab�a hecho pedazos, y, por asegurarse deste peligro, la 
+torn� a hacer de nuevo, poni�ndole unas barras de hierro por de dentro, 
+de tal manera que �l qued� satisfecho de su fortaleza; y, sin querer 
+hacer nueva experiencia della, la diput� y tuvo por celada fin�sima de 
+encaje.</p>  
+  
+  <h3>Fue luego a ver su roc�n</h3>
+  <p>Fue luego a ver su roc�n, y, aunque ten�a m�s cuartos que un real y
+ m�s tachas que el caballo de Gonela, que tantum pellis et ossa fuit, le
+ pareci� que ni el Buc�falo de Alejandro ni Babieca el del Cid con �l se
+ igualaban. </p>  
+
+
+
+</body></html>

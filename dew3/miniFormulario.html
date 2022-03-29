@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es-es"><head>
+<meta http-equiv="content-type" content="text/html" charset="UTF-8">
+  <meta charset="utf-8">
+  <meta name="description" content="Laboratorio 1 de DEW, curso 2021/22">
+  <meta name="author" content="Vicent Sornosa">
+  <title>miniformulario</title>
+  <script>
+    function aviso(form) {
+      alert("En el formulario " + texto.value);
+      return false; // Impide que se invoque el CGI del campo action
+    }
+  </script>
+</head>
+
+<body>
+  <h1>dew1 - miniformulario</h1>
+  <p>Este ejemplo puede tomarse como base para trabajar con formularios.</p>
+  <form action="http://memex.dsic.upv.es:8080/dew1/Printenv" id="Vicent_Sornosa" onsubmit="return aviso(this);">
+    <input type="text" value="Introduzca datos" id="texto" />
+    <input type="submit" value="Ejecutar" />
+  </form>
+
+
+</body></html>

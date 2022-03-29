@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title> DNI DIAGNOSTICO </title>
+    <script>
+        function dni(DNI) {
+            var x = dni_text.value;
+            var letras = "TRWAGMYFPDXBNJZSQVHLCKET";
+            if(x.length != 9) {
+                x.length < 9 ? alert("hay menos de 9  caracteres") : alert("hay mas de 9 caracteres");} 
+            else { 
+                var letra = x.charAt(x.length - 1);
+                if(!isNaN(letra)){
+                    alert("El ultimo dijito debe ser una letra mayuscula"); 
+                    return true;
+                }
+                var x = x.slice(0, -1);
+                
+                if(isNaN(x)) {
+                    alert("Los primeros 8 deben ser dígitos"); 
+                    return true; 
+                } 
+                (letra == letras[ x % 23]) ? alert("DNI valido") : alert("DNI invalido " + dni_text.value);
+            } 
+            return true;
+        } 
+    </script>
+</head>
+<body>
+    <h1>Coloque su dni</h1>
+    <label>Realizaremos un diagnostico del mismo</label>
+    <form onsubmit="return dni(this);">
+        <input type="text" id="dni_text" />
+        <input type="submit" value="Ejecutar" />
+    </form>
+    
+    <xmp>
+        <!DOCTYPE html>
+        <html lang="es-es">
+        <head>
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+            <title> DNI DIAGNOSTICO </title>
+            <script>
+                function dni(DNI) {
+                    var x = dni_text.value;
+                    var letras = "TRWAGMYFPDXBNJZSQVHLCKET";
+                    if(x.length != 9) {
+                        x.length < 9 ? alert("hay menos de 9  caracteres") : alert("hay mas de 9 caracteres");} 
+                    else { 
+                        var letra = x.charAt(x.length - 1);
+                        if(!isNaN(letra)){
+                            alert("El ultimo dijito debe ser una letra mayuscula"); 
+                            return true;
+                        }
+                        var x = x.slice(0, -1);
+                        
+                        if(isNaN(x)) {
+                            alert("Los primeros 8 deben ser dígitos"); 
+                            return true; 
+                        } 
+                        (letra == letras[ x % 23]) ? alert("DNI valido") : alert("DNI invalido " + dni_text.value);
+                    } 
+                    return true;
+                } 
+            </script>
+        </head>
+        <body>
+            <h1>Coloque su dni</h1>
+            <label>Realizaremos un diagnostico del mismo</label>
+            <form onsubmit="return dni(this);">
+                <input type="text" id="dni_text" />
+                <input type="submit" value="Ejecutar" />
+            </form>
+    </xmp>
+</body>
+</html>

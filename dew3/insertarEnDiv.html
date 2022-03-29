@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="Laboratorio 1 de DEW, ETSINF, curso 2021/22" />
+<meta name="author" content="Ramon Garcia" />
+<title>Insertar en DIV</title>
+<script>
+function escribir(){
+  var destino = document.getElementById('aqui')
+  var p = document.createElement('p')
+  p.innerHTML = "Hola a tod@s!!!; ";
+  var a = document.createElement('a')
+  a.href = "http://www.upv.es/"; a.innerHTML = "pulsad aqu&iacute;"
+  p.appendChild(a)
+  p.innerHTML += " (si quer&eacute;is)."
+  destino.appendChild(p);
+}
+</script>
+</head>
+<body onload="escribir()">
+<h1>Laboratorio 1 de DEW - Insertar en DIV</h1>
+<h2>Se inserta a continuaci&oacute;n</h2>
+<div id="aqui"></div>
+<p>Y esto es un texto de relleno</p>
+</body>
+</html>

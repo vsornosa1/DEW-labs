@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+<title>Don Quijote de la Mancha</title>
+<style>
+  h3:target {
+    animation: highlight 1s ease;
+  }
+
+  @keyframes highlight {
+    from { background: yellow; }
+    to { background: white; }
+  }
+</style>
+<script>
+function ponerTdC() {
+  var el  = document.getElementById('tdc-aqui')
+  var nav = document.createElement('nav')
+  var h2  = document.createElement('h2')
+  h2.innerHTML = "En esta p&aacute;gina..."
+  var ol=document.createElement('ol')
+
+  // div-nav-h2-/h2-ol-[li-a-/a-/li]*-/ol-/nav-/div
+  var title, link, masuno;
+  var h3 = document.getElementsByTagName('h3');
+  for (var j = 0; j < h3.length; j++) {
+    title = h3[j].innerText;
+	  masuno = j + 1;
+    h3[j].id = masuno;
+    h3[j].innerHTML = masuno + ". " + title;
+    link = "#" + h3[j].id;
+    var li = document.createElement('li');
+    var a  = document.createElement('a');
+    a.href = link; 
+    a.text = title;
+    li.appendChild(a);
+    ol.appendChild(li);
+  }	
+  nav.appendChild(h2); nav.appendChild(ol);
+  el.appendChild(nav);
+}
+</script>
+
+</head>
+<body onload="ponerTdC()">
+  <h1>Don Quijote con Tabla de Contenidos (autogenerada, lista numerada y parpadeo)</h1>
+  <p>Procedente de Wikisource, este texto es el inicio del <a href="https://es.wikisource.org/wiki/El_ingenioso_hidalgo_Don_Quijote_de_la_Mancha">primer cap&iacute;tulo de la primera parte de <cite>El ingenioso Hidalgo Don Quijote de la Mancha</cite></a>, de <cite>Miguel de Cervantes Saavedra</cite></p>  
+    
+  <div id="tdc-aqui"></div><!-- Ubicación de la Tabla de Contenidos -->
+  
+  <h3>En un lugar de la Mancha</h3>
+  <p>En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que viv&iacute;a un hidalgo de los de lanza en astillero, adarga antigua, roc&iacute;n flaco y galgo corredor.</p>  
+  
+  <h3>Es, pues, de saber que este sobredicho hidalgo</h3>
+  <p>Es, pues, de saber que este sobredicho hidalgo, los ratos que estaba ocioso, que eran los m&aacute;s del a&ntilde;o, se daba a leer libros de caballer&iacute;as, con tanta afici&oacute;n y gusto, que olvid&oacute; casi de todo punto el ejercicio de la caza, y aun la administraci&oacute;n de su hacienda. Y lleg&oacute; a tanto su curiosidad y desatino en esto, que vendi&oacute; muchas hanegas de tierra de sembradura para comprar libros de caballer&iacute;as en que leer, y as&iacute;, llev&oacute; a su casa todos cuantos pudo haber dellos; y de todos, ningunos le parec&iacute;an tan bien como los que compuso el famoso Feliciano de Silva, porque la claridad de su prosa y aquellas entricadas razones suyas le parec&iacute;an de perlas, y m&aacute;s cuando llegaba a leer aquellos requiebros y cartas de desaf&iacute;os, donde en muchas partes hallaba escrito: La raz&oacute;n de la sinraz&oacute;n que a mi raz&oacute;n se hace, de tal manera mi raz&oacute;n enflaquece, que con raz&oacute;n me quejo de la vuestra fermosura. Y tambi&eacute;n cuando le&iacute;a: ...los altos cielos que de vuestra divinidad divinamente con las estrellas os fortifican, y os hacen merecedora del merecimiento que merece la vuestra grandeza.</p>  
+  
+  <h3>Con estas razones perd&iacute;a el pobre caballero el juicio</h3>
+  <p>Con estas razones perd&iacute;a el pobre caballero el juicio, y desvel&aacute;base por entenderlas y desentra&ntilde;arles el sentido, que no se lo sacara ni las entendiera el mesmo Arist&oacute;teles, si resucitara para s&oacute;lo ello. No estaba muy bien con las heridas que don Belian&iacute;s daba y receb&iacute;a, porque se imaginaba que, por grandes maestros que le hubiesen curado, no dejar&iacute;a de tener el rostro y todo el cuerpo lleno de cicatrices y se&ntilde;ales. Pero, con todo, alababa en su autor aquel acabar su libro con la promesa de aquella inacabable aventura, y muchas veces le vino deseo de tomar la pluma y dalle fin al pie de la letra, como all&iacute; se promete; y sin duda alguna lo hiciera, y aun saliera con ello, si otros mayores y continuos pensamientos no se lo estorbaran. Tuvo muchas veces competencia con el cura de su lugar -que era hombre docto, graduado en Sigüenza-, sobre cu&aacute;l hab&iacute;a sido mejor caballero: Palmer&iacute;n de Ingalaterra o Amad&iacute;s de Gaula; mas maese Nicol&aacute;s, barbero del mesmo pueblo, dec&iacute;a que ninguno llegaba al Caballero del Febo, y que si alguno se le pod&iacute;a comparar, era don Galaor, hermano de Amad&iacute;s de Gaula, porque ten&iacute;a muy acomodada condici&oacute;n para todo; que no era caballero melindroso, ni tan llor&oacute;n como su hermano, y que en lo de la valent&iacute;a no le iba en zaga</p>  
+  
+  <h3>En resoluci&oacute;n, &eacute;l se enfrasc&oacute; tanto en su lectura</h3>
+  <p>En resoluci&oacute;n, &eacute;l se enfrasc&oacute; tanto en su lectura, que se le pasaban las noches leyendo de claro en claro, y los d&iacute;as de turbio en turbio; y as&iacute;, del poco dormir y del mucho leer, se le sec&oacute; el celebro, de manera que vino a perder el juicio. Llen&oacute;sele la fantas&iacute;a de todo aquello que le&iacute;a en los libros, as&iacute; de encantamentos como de pendencias, batallas, desaf&iacute;os, heridas, requiebros, amores, tormentas y disparates imposibles; y asent&oacute;sele de tal modo en la imaginaci&oacute;n que era verdad toda aquella m&aacute;quina de aquellas sonadas so&ntilde;adas invenciones que le&iacute;a, que para &eacute;l no hab&iacute;a otra historia m&aacute;s cierta en el mundo. Dec&iacute;a &eacute;l que el Cid Ruy D&iacute;az hab&iacute;a sido muy buen caballero, pero que no ten&iacute;a que ver con el Caballero de la Ardiente Espada, que de s&oacute;lo un rev&eacute;s hab&iacute;a partido por medio dos fieros y descomunales gigantes. Mejor estaba con Bernardo del Carpio, porque en Roncesvalles hab&iacute;a muerto a Rold&aacute;n el encantado, vali&eacute;ndose de la industria de H&eacute;rcules, cuando ahog&oacute; a Anteo, el hijo de la Tierra, entre los brazos. Dec&iacute;a mucho bien del gigante Morgante, porque, con ser de aquella generaci&oacute;n gigantea, que todos son soberbios y descomedidos, &eacute;l solo era afable y bien criado. Pero, sobre todos, estaba bien con Reinaldos de Montalb&aacute;n, y m&aacute;s cuando le ve&iacute;a salir de su castillo y robar cuantos topaba, y cuando en allende rob&oacute; aquel &iacute;dolo de Mahoma que era todo de oro, seg&uacute;n dice su historia. Diera &eacute;l, por dar una mano de coces al traidor de Galal&oacute;n, al ama que ten&iacute;a, y aun a su sobrina de a&ntilde;adidura. </p>  
+  
+  <h3>En efeto, rematado ya su juicio</h3>
+  <p>En efeto, rematado ya su juicio, vino a dar en el m&aacute;s estra&ntilde;o pensamiento que jam&aacute;s dio loco en el mundo; y fue que le pareci&oacute; convenible y necesario, as&iacute; para el aumento de su honra como para el servicio de su rep&uacute;blica, hacerse caballero andante, y irse por todo el mundo con sus armas y caballo a buscar las aventuras y a ejercitarse en todo aquello que &eacute;l hab&iacute;a le&iacute;do que los caballeros andantes se ejercitaban, deshaciendo todo g&eacute;nero de agravio, y poni&eacute;ndose en ocasiones y peligros donde, acab&aacute;ndolos, cobrase eterno nombre y fama. Imagin&aacute;base el pobre ya coronado por el valor de su brazo, por lo menos, del imperio de Trapisonda; y as&iacute;, con estos tan agradables pensamientos, llevado del estra&ntilde;o gusto que en ellos sent&iacute;a, se dio priesa a poner en efeto lo que deseaba.</p>  
+  
+  <h3>Y lo primero que hizo fue limpiar unas armas</h3>
+  <p>Y lo primero que hizo fue limpiar unas armas que hab&iacute;an sido de sus bisabuelos, que, tomadas de or&iacute;n y llenas de moho, luengos siglos hab&iacute;a que estaban puestas y olvidadas en un rinc&oacute;n. Limpi&oacute;las y aderez&oacute;las lo mejor que pudo, pero vio que ten&iacute;an una gran falta, y era que no ten&iacute;an celada de encaje, sino morri&oacute;n simple; mas a esto supli&oacute; su industria, porque de cartones hizo un modo de media celada, que, encajada con el morri&oacute;n, hac&iacute;an una apariencia de celada entera. Es verdad que para probar si era fuerte y pod&iacute;a estar al riesgo de una cuchillada, sac&oacute; su espada y le dio dos golpes, y con el primero y en un punto deshizo lo que hab&iacute;a hecho en una semana; y no dej&oacute; de parecerle mal la facilidad con que la hab&iacute;a hecho pedazos, y, por asegurarse deste peligro, la torn&oacute; a hacer de nuevo, poni&eacute;ndole unas barras de hierro por de dentro, de tal manera que &eacute;l qued&oacute; satisfecho de su fortaleza; y, sin querer hacer nueva experiencia della, la diput&oacute; y tuvo por celada fin&iacute;sima de encaje.</p>  
+  
+  <h3>Fue luego a ver su roc&iacute;n</h3>
+  <p>Fue luego a ver su roc&iacute;n, y, aunque ten&iacute;a m&aacute;s cuartos que un real y m&aacute;s tachas que el caballo de Gonela, que tantum pellis et ossa fuit, le pareci&oacute; que ni el Buc&eacute;falo de Alejandro ni Babieca el del Cid con &eacute;l se igualaban. </p>  
+
+  <xmp>
+    <!DOCTYPE html>
+    <html lang="es-es">
+    <head>
+    <title>Don Quijote de la Mancha</title>
+    <style>
+      h3:target {
+        animation: highlight 1s ease;
+      }
+
+      @keyframes highlight {
+        from { background: yellow; }
+        to { background: white; }
+      }
+    </style>
+    <script>
+    function ponerTdC() {
+      var el  = document.getElementById('tdc-aqui')
+      var nav = document.createElement('nav')
+      var h2  = document.createElement('h2')
+      h2.innerHTML = "En esta p&aacute;gina..."
+      var ol=document.createElement('ol')
+
+      // div-nav-h2-/h2-ol-[li-a-/a-/li]*-/ol-/nav-/div
+      var title, link, masuno;
+      var h3 = document.getElementsByTagName('h3');
+      for (var j = 0; j < h3.length; j++) {
+        title = h3[j].innerText;
+        masuno = j + 1;
+        h3[j].id = masuno;
+        h3[j].innerHTML = masuno + ". " + title;
+        link = "#" + h3[j].id;
+        var li = document.createElement('li');
+        var a  = document.createElement('a');
+        a.href = link; 
+        a.text = title;
+        li.appendChild(a);
+        ol.appendChild(li);
+      }	
+      nav.appendChild(h2); nav.appendChild(ol);
+      el.appendChild(nav);
+    }
+    </script>
+
+    </head>
+    <body onload="ponerTdC()">
+      <h1>Don Quijote con Tabla de Contenidos (autogenerada, lista numerada y parpadeo)</h1>
+      <p>Procedente de Wikisource, este texto es el inicio del <a href="https://es.wikisource.org/wiki/El_ingenioso_hidalgo_Don_Quijote_de_la_Mancha">primer cap&iacute;tulo de la primera parte de <cite>El ingenioso Hidalgo Don Quijote de la Mancha</cite></a>, de <cite>Miguel de Cervantes Saavedra</cite></p>  
+        
+      <div id="tdc-aqui"></div><!-- Ubicación de la Tabla de Contenidos -->
+      
+      <h3>En un lugar de la Mancha</h3>
+      <p>En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que viv&iacute;a un hidalgo de los de lanza en astillero, adarga antigua, roc&iacute;n flaco y galgo corredor.</p>  
+      
+      <h3>Es, pues, de saber que este sobredicho hidalgo</h3>
+      <p>Es, pues, de saber que este sobredicho hidalgo, los ratos que estaba ocioso, que eran los m&aacute;s del a&ntilde;o, se daba a leer libros de caballer&iacute;as, con tanta afici&oacute;n y gusto, que olvid&oacute; casi de todo punto el ejercicio de la caza, y aun la administraci&oacute;n de su hacienda. Y lleg&oacute; a tanto su curiosidad y desatino en esto, que vendi&oacute; muchas hanegas de tierra de sembradura para comprar libros de caballer&iacute;as en que leer, y as&iacute;, llev&oacute; a su casa todos cuantos pudo haber dellos; y de todos, ningunos le parec&iacute;an tan bien como los que compuso el famoso Feliciano de Silva, porque la claridad de su prosa y aquellas entricadas razones suyas le parec&iacute;an de perlas, y m&aacute;s cuando llegaba a leer aquellos requiebros y cartas de desaf&iacute;os, donde en muchas partes hallaba escrito: La raz&oacute;n de la sinraz&oacute;n que a mi raz&oacute;n se hace, de tal manera mi raz&oacute;n enflaquece, que con raz&oacute;n me quejo de la vuestra fermosura. Y tambi&eacute;n cuando le&iacute;a: ...los altos cielos que de vuestra divinidad divinamente con las estrellas os fortifican, y os hacen merecedora del merecimiento que merece la vuestra grandeza.</p>  
+      
+      <h3>Con estas razones perd&iacute;a el pobre caballero el juicio</h3>
+      <p>Con estas razones perd&iacute;a el pobre caballero el juicio, y desvel&aacute;base por entenderlas y desentra&ntilde;arles el sentido, que no se lo sacara ni las entendiera el mesmo Arist&oacute;teles, si resucitara para s&oacute;lo ello. No estaba muy bien con las heridas que don Belian&iacute;s daba y receb&iacute;a, porque se imaginaba que, por grandes maestros que le hubiesen curado, no dejar&iacute;a de tener el rostro y todo el cuerpo lleno de cicatrices y se&ntilde;ales. Pero, con todo, alababa en su autor aquel acabar su libro con la promesa de aquella inacabable aventura, y muchas veces le vino deseo de tomar la pluma y dalle fin al pie de la letra, como all&iacute; se promete; y sin duda alguna lo hiciera, y aun saliera con ello, si otros mayores y continuos pensamientos no se lo estorbaran. Tuvo muchas veces competencia con el cura de su lugar -que era hombre docto, graduado en Sigüenza-, sobre cu&aacute;l hab&iacute;a sido mejor caballero: Palmer&iacute;n de Ingalaterra o Amad&iacute;s de Gaula; mas maese Nicol&aacute;s, barbero del mesmo pueblo, dec&iacute;a que ninguno llegaba al Caballero del Febo, y que si alguno se le pod&iacute;a comparar, era don Galaor, hermano de Amad&iacute;s de Gaula, porque ten&iacute;a muy acomodada condici&oacute;n para todo; que no era caballero melindroso, ni tan llor&oacute;n como su hermano, y que en lo de la valent&iacute;a no le iba en zaga</p>  
+      
+      <h3>En resoluci&oacute;n, &eacute;l se enfrasc&oacute; tanto en su lectura</h3>
+      <p>En resoluci&oacute;n, &eacute;l se enfrasc&oacute; tanto en su lectura, que se le pasaban las noches leyendo de claro en claro, y los d&iacute;as de turbio en turbio; y as&iacute;, del poco dormir y del mucho leer, se le sec&oacute; el celebro, de manera que vino a perder el juicio. Llen&oacute;sele la fantas&iacute;a de todo aquello que le&iacute;a en los libros, as&iacute; de encantamentos como de pendencias, batallas, desaf&iacute;os, heridas, requiebros, amores, tormentas y disparates imposibles; y asent&oacute;sele de tal modo en la imaginaci&oacute;n que era verdad toda aquella m&aacute;quina de aquellas sonadas so&ntilde;adas invenciones que le&iacute;a, que para &eacute;l no hab&iacute;a otra historia m&aacute;s cierta en el mundo. Dec&iacute;a &eacute;l que el Cid Ruy D&iacute;az hab&iacute;a sido muy buen caballero, pero que no ten&iacute;a que ver con el Caballero de la Ardiente Espada, que de s&oacute;lo un rev&eacute;s hab&iacute;a partido por medio dos fieros y descomunales gigantes. Mejor estaba con Bernardo del Carpio, porque en Roncesvalles hab&iacute;a muerto a Rold&aacute;n el encantado, vali&eacute;ndose de la industria de H&eacute;rcules, cuando ahog&oacute; a Anteo, el hijo de la Tierra, entre los brazos. Dec&iacute;a mucho bien del gigante Morgante, porque, con ser de aquella generaci&oacute;n gigantea, que todos son soberbios y descomedidos, &eacute;l solo era afable y bien criado. Pero, sobre todos, estaba bien con Reinaldos de Montalb&aacute;n, y m&aacute;s cuando le ve&iacute;a salir de su castillo y robar cuantos topaba, y cuando en allende rob&oacute; aquel &iacute;dolo de Mahoma que era todo de oro, seg&uacute;n dice su historia. Diera &eacute;l, por dar una mano de coces al traidor de Galal&oacute;n, al ama que ten&iacute;a, y aun a su sobrina de a&ntilde;adidura. </p>  
+      
+      <h3>En efeto, rematado ya su juicio</h3>
+      <p>En efeto, rematado ya su juicio, vino a dar en el m&aacute;s estra&ntilde;o pensamiento que jam&aacute;s dio loco en el mundo; y fue que le pareci&oacute; convenible y necesario, as&iacute; para el aumento de su honra como para el servicio de su rep&uacute;blica, hacerse caballero andante, y irse por todo el mundo con sus armas y caballo a buscar las aventuras y a ejercitarse en todo aquello que &eacute;l hab&iacute;a le&iacute;do que los caballeros andantes se ejercitaban, deshaciendo todo g&eacute;nero de agravio, y poni&eacute;ndose en ocasiones y peligros donde, acab&aacute;ndolos, cobrase eterno nombre y fama. Imagin&aacute;base el pobre ya coronado por el valor de su brazo, por lo menos, del imperio de Trapisonda; y as&iacute;, con estos tan agradables pensamientos, llevado del estra&ntilde;o gusto que en ellos sent&iacute;a, se dio priesa a poner en efeto lo que deseaba.</p>  
+      
+      <h3>Y lo primero que hizo fue limpiar unas armas</h3>
+      <p>Y lo primero que hizo fue limpiar unas armas que hab&iacute;an sido de sus bisabuelos, que, tomadas de or&iacute;n y llenas de moho, luengos siglos hab&iacute;a que estaban puestas y olvidadas en un rinc&oacute;n. Limpi&oacute;las y aderez&oacute;las lo mejor que pudo, pero vio que ten&iacute;an una gran falta, y era que no ten&iacute;an celada de encaje, sino morri&oacute;n simple; mas a esto supli&oacute; su industria, porque de cartones hizo un modo de media celada, que, encajada con el morri&oacute;n, hac&iacute;an una apariencia de celada entera. Es verdad que para probar si era fuerte y pod&iacute;a estar al riesgo de una cuchillada, sac&oacute; su espada y le dio dos golpes, y con el primero y en un punto deshizo lo que hab&iacute;a hecho en una semana; y no dej&oacute; de parecerle mal la facilidad con que la hab&iacute;a hecho pedazos, y, por asegurarse deste peligro, la torn&oacute; a hacer de nuevo, poni&eacute;ndole unas barras de hierro por de dentro, de tal manera que &eacute;l qued&oacute; satisfecho de su fortaleza; y, sin querer hacer nueva experiencia della, la diput&oacute; y tuvo por celada fin&iacute;sima de encaje.</p>  
+      
+      <h3>Fue luego a ver su roc&iacute;n</h3>
+      <p>Fue luego a ver su roc&iacute;n, y, aunque ten&iacute;a m&aacute;s cuartos que un real y m&aacute;s tachas que el caballo de Gonela, que tantum pellis et ossa fuit, le pareci&oacute; que ni el Buc&eacute;falo de Alejandro ni Babieca el del Cid con &eacute;l se igualaban. </p>  
+
+    </body>
+  </xmp>
+</body>
+</html>
